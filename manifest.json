@@ -5,15 +5,32 @@
     "description": "Extension qui propose des outils améliorant l'accesibilité",
     
     // API ? 
-    // "permissions" : [
-    //     "",
-    // ],
+    "permissions": [
+        "activeTab",
+        "scripting",
+        "contextMenus",
+        "storage"
+      ],
+
+      "optional_permissions": [
+        "topSites",
+        "tabs"  
+      ],
+      "host_permissions": [
+        "https://www.developer.chrome.com/*",
+        "https://www.google.com/"
+      ],
+      "optional_host_permissions":[
+        "https://*/*",
+        "http://*/*"
+      ],
+    
 
     // gestionnaire d'évènements en arrière plan
-    // "background": {
-    //     "service_worker": "background.js"
+    "background": {
+        "service_worker": "background.js"
         
-    // },
+    },
 
     // icône de l'extension
     "icons": {
@@ -25,20 +42,21 @@
         "default_icon": "icone.png",
         "default_title": "Inclusivity Tool",
         "default_popup": "popup/popup.html"
-    },
+
+    }
     
     // fonctionnalité gras
-    "content_scripts": [
-        {
-          "js": [
-            "bold-script.js"
-          ],
-          "matches": [
-            "http://*/*",
-            "https://*/*"
-        ]
-        }
-      ]
+    // "content_scripts": [
+    //     {
+    //       "js": [
+    //         "bold-script.js"
+    //       ],
+    //       "matches": [
+    //         "http://*/*",
+    //         "https://*/*"
+    //     ]
+    //     }
+    //   ]
     
-  }
+}
   
