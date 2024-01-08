@@ -44,19 +44,5 @@
         "default_popup": "popup/popup.html"
 
     }
-    
-    // fonctionnalité gras
-    // "content_scripts": [
-    //     {
-    //       "js": [
-    //         "bold-script.js"
-    //       ],
-    //       "matches": [
-    //         "http://*/*",
-    //         "https://*/*"
-    //     ]
-    //     }
-    //   ]
-    
 }
   
