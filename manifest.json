@@ -1,0 +1,44 @@
+{
+    "manifest_version": 3,
+    "name": "Accessibility Tool",
+    "version": "1.0",
+    "description": "Extension qui propose des outils améliorant l'accesibilité",
+    
+    // API ? 
+    // "permissions" : [
+    //     "",
+    // ],
+
+    // gestionnaire d'évènements en arrière plan
+    "background": {
+        "service_worker": "background.js"
+        
+    },
+
+    // icône de l'extension
+    "icons": {
+      "48": "icone.png"
+    },
+
+    // fenêtre popup et autres
+    "browser_action": {
+        "default_icon": "img/favicon.png",
+        "default_title": "Twitch Sideplayer",
+        "default_popup": "html/popup.html"
+    },
+    
+    // fonctionnalité gras
+    "bold_script": [
+        {
+          "js": [
+            "bold-script.js"
+          ],
+          "matches": [
+            "http://*/*",
+            "https://*/*"
+        ]
+        }
+      ]
+    
+  }
+  
