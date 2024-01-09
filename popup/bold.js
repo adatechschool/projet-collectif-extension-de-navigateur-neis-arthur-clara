@@ -1,4 +1,4 @@
-document.getElementById('cadre').addEventListener('click', async () => {
+document.getElementById('toggleGras').addEventListener('click', async () => {
     //let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
     // chrome.scripting.executeScript({
     //   target: { tabId: tab.id, allFrames : true },
@@ -18,5 +18,7 @@ document.getElementById('cadre').addEventListener('click', async () => {
     });
    
   });
+
+
 
  
