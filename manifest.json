@@ -4,7 +4,6 @@
     "version": "1.0",
     "description": "Extension qui propose des outils améliorant l'accesibilité",
     
-    // API ? 
     "permissions": [
         "activeTab",
         "scripting",
@@ -26,18 +25,15 @@
       ],
     
 
-    // gestionnaire d'évènements en arrière plan
     "background": {
         "service_worker": "background.js"
         
     },
 
-    // icône de l'extension
     "icons": {
       "48": "icone.png"
     },
 
-    // fenêtre popup et autres
     "action": {
         "default_icon": "icone.png",
         "default_title": "Inclusivity Tool",
