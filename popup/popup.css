@@ -1,22 +1,19 @@
-body {
-  width: 90vw;
-  height: 100vh;
-
-
+.contenupopup {
+  width: 300px;
+  padding: 20px;
+  text-align: center;
 }
 
-/*Style de la fonctionnalité mettre en gras*/
-.stylegras {
-  padding-right: 5vw;
-  position: fixed;
-  top: 20%;
-
+.contenupopup li {
+  width: 300px;
+  padding: 20px;
+  text-align: center;
 }
 
 
 /*Toggle pour mettre en gras*/
 .switch {
-  position: fixed;
+  position: relative;
   display: inline-block;
   width: fit-content; 
   margin-left: auto; 
