@@ -1,3 +1,4 @@
+
 document.getElementById('toggleGras').addEventListener('click', async () => {
     //let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
     // chrome.scripting.executeScript({
@@ -6,7 +7,7 @@ document.getElementById('toggleGras').addEventListener('click', async () => {
     //     document.body.style.border = '2px solid red';
     //   },
     // });
-
+console.log("cococ")
     var tabs = await chrome.tabs.query({});
     tabs.forEach(function (tab) {
         chrome.scripting.executeScript({
