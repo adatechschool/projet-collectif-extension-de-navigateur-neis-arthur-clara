@@ -6,16 +6,23 @@
   
 </head>
 <body>
-  <h1>Bonjour</h1>
+  <div class="contenupopup">
+  <li class = "stylegras">Mettre en gras</li>
   <p>changer la couleur de fond</p>
   <input type="color" id="background">
   <p>changer la couleur du texte</p>
   <input type="color" id="text">
-  <label class="switch"> Mettre en gras
+  <label class="switch"> 
     <input type="checkbox" id="toggleGras">
     <span class="slider round"></span> 
   </label>
+  </div id='zoom_container'>
+  <div>
+  <button type="button" id="zoomin">Zoom-in</button> 
+  <button type="button" id="zoomout">Zoom-out</button>
+  <script src="zoom.js"></script>
   <script src="bold.js"></script>
   <script src="color.js"></script>
+  </div>
 </body>
 </html>
