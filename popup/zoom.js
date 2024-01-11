@@ -1,11 +1,15 @@
 document.getElementById('zoomin').addEventListener('click', async () => {
-    var tabs = await chrome.tabs.query({});
-    tabs.forEach(function (tab) {
+    // Obtenir l'onglet actif
+    var [activeTab] = await chrome.tabs.query({ active: true, currentWindow: true });
+
+    // Vérifier si un onglet actif a été trouvé
+    if (activeTab) {
+        // Exécuter le script uniquement sur l'onglet actif
         chrome.scripting.executeScript({
-            target: { tabId: tab.id, allFrames: true },
+            target: { tabId: activeTab.id },
             function: zoomIn
         });
-    });
+    }
 });
 
 function zoomIn() {
@@ -14,15 +18,18 @@ function zoomIn() {
 };
 
 document.getElementById('zoomout').addEventListener('click', async () => {
-    var tabs = await chrome.tabs.query({});
-    tabs.forEach(function (tab) {
+    // Obtenir l'onglet actif
+    var [activeTab] = await chrome.tabs.query({ active: true, currentWindow: true });
+
+    // Vérifier si un onglet actif a été trouvé
+    if (activeTab) {
+        // Exécuter le script uniquement sur l'onglet actif
         chrome.scripting.executeScript({
-            target: { tabId: tab.id, allFrames: true },
+            target: { tabId: activeTab.id },
             function: zoomOut
         });
-    });
+    }
 });
-
 function zoomOut() {
     var zoom = parseInt(document.documentElement.style.zoom || '100') - 10 + '%';
     document.documentElement.style.zoom = zoom;
@@ -63,3 +70,4 @@ addEventListener("pointermove", (event) => {
   <button type="button" id="zoomout">Zoom-out</button>
   <script src="zoom.js"></script>
 */
+

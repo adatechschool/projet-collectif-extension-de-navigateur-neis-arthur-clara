@@ -25,27 +25,26 @@
       "optional_host_permissions":[
        
       ],
-    
 
     "background": {
         "service_worker": "background.js"    
     },
 
-      "content_scripts": [{
-          "matches" : ["*://*/*"],
-          "js": ["contentColor.js"]
+    "content_scripts": [{
+        "matches" : ["*://*/*"],
+        "js": ["contentColor.js","contentbold.js"]
         }],
     
 
     "icons": {
-      "48": "icone.png"
+      "48": "iconegouvernail.png"
     },
 
     "action": {
-        "default_icon": "icone.png",
+        "default_icon": "iconegouvernail.png",
         "default_title": "Inclusivity Tool",
         "default_popup": "popup/popup.html"
-
     }
+
 }
   
