@@ -20,6 +20,16 @@ function updateToggleState() {
 // Chargement initial de l'état du toggle
 updateToggleState();
 
+// Écouter les mises à jour des onglets
+chrome.tabs.onCreated.addListener((tab) => {
+  updateToggleState(); // Mettre à jour l'état du toggle dès que le nouvel onglet est créé
+  if (toggle.checked) {
+    formatWordsInTabs();
+  } else {
+    removeWordFormatting();
+  }
+});
+
 // Fonctions changement de l'état du toggle
 toggle.addEventListener("change", async () => {
   let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
@@ -33,6 +43,8 @@ toggle.addEventListener("change", async () => {
     removeWordFormatting();
   }
 });
+
+
 
 // Fonction pour mettre la moitié des mots en gras
 function formatWordsInTabs() {
@@ -76,12 +88,7 @@ function removeWordFormatting() {
   });
 }
 
-// Écouter les mises à jour des onglets
-chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
-  if (changeInfo.status === 'complete') {
-    updateToggleState(); // Mettre à jour l'état du toggle lorsque le nouvel onglet est chargé
-  }
-});
+
 
 
 
