@@ -23,22 +23,29 @@
         "https://*/*",
         "http://*/*"
       ],
-    
-
-    "background": {
-        "service_worker": "background.js"
-        
-    },
 
     "icons": {
-      "48": "icone.png"
+      "48": "iconegouvernail.png"
     },
 
     "action": {
-        "default_icon": "icone.png",
+        "default_icon": "iconegouvernail.png",
         "default_title": "Inclusivity Tool",
         "default_popup": "popup/popup.html"
 
-    }
+    },
+
+    "background": {
+      "service_worker": "background.js"
+
+    },
+
+    "content_scripts": [
+      {
+        "matches": ["*://*/*"],
+        "js": ["contentbold.js"]
+      }
+    ]
+
 }
   
