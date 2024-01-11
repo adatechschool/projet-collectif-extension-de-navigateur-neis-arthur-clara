@@ -8,7 +8,8 @@
         "activeTab",
         "scripting",
         "contextMenus",
-        "storage"
+        "storage",
+        "cookies"
       ],
 
       "optional_permissions": [
@@ -17,18 +18,24 @@
       ],
       "host_permissions": [
         "https://www.developer.chrome.com/*",
-        "https://www.google.com/"
-      ],
-      "optional_host_permissions":[
+        "https://www.google.com/",
         "https://*/*",
         "http://*/*"
+      ],
+      "optional_host_permissions":[
+       
       ],
     
 
     "background": {
-        "service_worker": "background.js"
-        
+        "service_worker": "background.js"    
     },
+
+      "content_scripts": [{
+          "matches" : ["*://*/*"],
+          "js": ["contentColor.js"]
+        }],
+    
 
     "icons": {
       "48": "icone.png"
