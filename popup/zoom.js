@@ -35,39 +35,4 @@ function zoomOut() {
     document.documentElement.style.zoom = zoom;
 }
 
-/*
-  function zoomIn()
-  {
-    var Page = document.getElementById('Body');
-    var zoom = parseInt(Page.style.zoom) + 10 +'%'
-    Page.style.zoom = zoom;
-    return false;
-  }
-addEventListener("pointermove", (event) => {
-                   
-                });
-  // pageX et pageY pour la position de la sourie
-
-  function mousemove(event) {
-    console.log(
-        'clientX: ', event.clientX, 'clientY:', event.clientY)
-  }
-
-
-  const {
-    clientX,
-    clientY
-  } = event;
-
-  addEventListener("pointermove", (event) => {});
-
-  var positions = curPos();
-  var mouseX = positions.clientX;
-  var mouseY = positions.clientY;
-
-
-  <button type="button" id="zoomin">Zoom-in</button> 
-  <button type="button" id="zoomout">Zoom-out</button>
-  <script src="zoom.js"></script>
-*/
 
