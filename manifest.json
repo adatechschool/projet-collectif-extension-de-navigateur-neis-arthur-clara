@@ -9,7 +9,8 @@
         "scripting",
         "contextMenus",
         "storage",
-        "cookies"
+        "cookies",
+        "tts"
       ],
 
       "optional_permissions": [
