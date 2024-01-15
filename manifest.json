@@ -32,13 +32,20 @@
 
     "content_scripts": [{
         "matches" : ["*://*/*"],
-        "js": ["contentColor.js","contentbold.js"]
+        "js": ["contentColor.js","contentbold.js","contentCursor.js"]
         }],
     
 
     "icons": {
       "48": "iconegouvernail.png"
     },
+
+    "web_accessible_resources": [
+      {
+      "resources" : ["popup/cursor_blue.png","*.png"],
+      "matches": ["*://*/*"]
+      }
+    ],
 
     "action": {
         "default_icon": "iconegouvernail.png",
