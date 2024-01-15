@@ -59,6 +59,7 @@
                     chrome.tabs.reload(tab.id)})
                 });
         });
+        chrome.tts.speak('Hello, world.');
     });
     
 //     function getColorb () {
