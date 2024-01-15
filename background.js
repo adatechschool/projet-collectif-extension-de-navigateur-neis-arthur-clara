@@ -16,6 +16,7 @@ function cookieUpdate() {
       //et les envoie en message au content-script//
       gettingCookies.then((cookie) => {
         if (cookie) {
+          console.log("blabla");
           let cookieVal = JSON.parse(cookie.value);
           chrome.tabs.sendMessage(tabs[0].id, {colorb: cookieVal.colorb});
           chrome.tabs.sendMessage(tabs[0].id, {colort: cookieVal.colort});
@@ -28,7 +29,7 @@ function cookieUpdate() {
 chrome.tabs.onUpdated.addListener(cookieUpdate);
   // update quand la page est activée
 chrome.tabs.onActivated.addListener(cookieUpdate);
-
+chrome.tabs.onCreated.addListener(cookieUpdate);
   // Écoutez les événements de création et de mise à jour des onglets
 chrome.tabs.onCreated.addListener(function (tab) {
     handleToggleState(tab.id);

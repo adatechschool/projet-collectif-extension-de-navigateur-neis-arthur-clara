@@ -1,5 +1,6 @@
     let backgroundPicker = document.getElementById('background');
     let textPicker = document.getElementById('text');
+    let resetButton = document.getElementById('reset');
     let cookieVal = {
         colorb : '',
         colort : ''
@@ -19,7 +20,8 @@
             chrome.cookies.set({
                 url: tabs[0].url,
                 name: "colorPicker", 
-                value: JSON.stringify(cookieVal)
+                value: JSON.stringify(cookieVal),
+                expirationDate: (new Date().getTime()/1000) + 604800
             });
         });
     });
@@ -33,8 +35,29 @@
             chrome.cookies.set({
                 url : tabs[0].url,
                 name : "colorPicker",
-                value: JSON.stringify(cookieVal)
+                value: JSON.stringify(cookieVal),
+                expirationDate: (new Date().getTime()/1000) + 604800
             });
+        });
+    });
+
+    resetButton.addEventListener("click", function (){
+        getActiveTab().then((tabs) => {
+            chrome.tabs.sendMessage(tabs[0].id, {reset : true});
+            cookieVal = {
+                colorb : '',
+                colort : ''
+            };
+            chrome.cookies.remove({
+                url : tabs[0].url,
+                name : "colorPicker"
+            });
+            chrome.tabs.query({}, function(tabs) { 
+                console.log(tabs)
+                tabs.forEach(function(tab){
+                    console.log(tab);
+                    chrome.tabs.reload(tab.id)})
+                });
         });
     });
     
