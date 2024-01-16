@@ -1,5 +1,29 @@
+//creation d'un context menu qui apparait lors d'un clic droit sur une selection
+chrome.contextMenus.create({
+  id: "text-selection",
+  title: "Lire à voix haute",
+  contexts: ["selection"],
+});
 
-//console.log("coucou")
+//écoute des clics sur le context-menu
+chrome.contextMenus.onClicked.addListener(function (info, tab) {
+  if (info.menuItemId == "text-selection") {
+    //lecture à voix haute du texte selectionné
+    chrome.tts.speak(info.selectionText);
+    //creation d'un autre contexte menu pour arreter la lecture qui apparrait au clic droit n'importe où
+    chrome.contextMenus.create({
+      id: "stop",
+      title: "Arrêter la lecture",
+      contexts : ["all"],
+});//si le clic est sur le contexte menu de stop
+  } else if (info.menuItemId == "stop"){
+    //arrête la lecture
+    chrome.tts.stop();
+    //efface le context menu de stop
+    chrome.contextMenus.remove(info.menuItemId)
+  }
+});
+
 function getActiveTab() {
     return chrome.tabs.query({active: true, currentWindow: true});
   }
