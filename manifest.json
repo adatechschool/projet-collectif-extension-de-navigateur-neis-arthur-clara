@@ -44,7 +44,7 @@
 
     "web_accessible_resources": [
       {
-      "resources" : ["popup/cursor_blue.png", "popup/icons8-voix-25.png", "popup/icons8-silence-25.png"],
+      "resources" : ["popup/cursor_blue.png", "popup/icons8-voix-25.png", "popup/icons8-silence-25.png","popup/left_click.png","popup/click.gif"],
       "matches": ["*://*/*"]
       }
     ],
