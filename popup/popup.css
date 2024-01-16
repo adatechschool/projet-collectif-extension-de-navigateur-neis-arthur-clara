@@ -1,12 +1,23 @@
 .contenupopup {
   height: auto;
-  width: 90vw;
+  width: 85vw;
   margin: 2vw;
   text-align: center;
+  cursor: default;
 }
 
 body{
   background-color: black;
+}
+
+button {
+  border-radius: 2rem;
+  border: 2px solid #0d0d0e;
+  padding: 2% 4%;
+  cursor: pointer;
+  font-size: medium;
+  font-weight: 600;
+  background: linear-gradient(#CAF0F8, #90E0EF, #00B4D8);
 }
 
 #zoom_container{
@@ -18,10 +29,12 @@ body{
 
 #zoomin{
   display: flex;
+  cursor: zoom-in;
 }
 
 #zoomout{
   align-content: center;
+  cursor: zoom-out;
 
 }
 
@@ -34,8 +47,22 @@ body{
   border: 2px solid #2196F3;
   border-radius: 5px;
   background-color:aliceblue;
+  padding: 4%;
+  justify-content: center;
+  align-items: center;
+  font-size:medium;
+  font-weight:500;
+}
+#background, #text {
+  cursor: cell;
 }
 
+#lecture {
+  cursor :url("icons8-voix-25.png"),auto;
+}
+#stop {
+  cursor :url("icons8-silence-25.png"),auto;
+}
 
 /*Toggle pour mettre en gras*/
 .switch {
