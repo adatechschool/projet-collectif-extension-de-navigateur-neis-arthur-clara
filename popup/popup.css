@@ -3,11 +3,16 @@
   width: 90vw;
   margin: 2vw;
   text-align: center;
+  /*overflow-y: scroll; /* use hidden to hide the scrollbar */
 }
 
 body{
   background-color: black;
+  border-radius: 20px;
+  overflow:scroll;
 }
+
+
 
 #zoom_container{
   padding: 4%;

@@ -1,6 +1,10 @@
 function changeCurrentCursor() {
     // Utiliser le curseur local
     document.body.style.cursor = 'url(' + chrome.runtime.getURL('popup/cursor_blue.png') + '), auto';
+    let liens = document.body.querySelectorAll('a, span');
+    liens.forEach(tag => {
+        tag.style.cursor = 'url(' + chrome.runtime.getURL('popup/left_click.png') + '), auto';
+    });
 };
 
 // remove l'état initial
@@ -23,5 +27,6 @@ chrome.runtime.onMessage.addListener(
         };
     });
 
+// span - a -
 
 

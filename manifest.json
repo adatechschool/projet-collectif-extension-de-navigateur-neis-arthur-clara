@@ -43,7 +43,7 @@
 
     "web_accessible_resources": [
       {
-      "resources" : ["popup/cursor_blue.png"],
+      "resources" : ["popup/cursor_blue.png","popup/left_click.png","popup/click.gif"],
       "matches": ["*://*/*"]
       }
     ],
