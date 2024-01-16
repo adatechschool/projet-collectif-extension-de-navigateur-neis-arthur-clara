@@ -29,6 +29,8 @@ chrome.tabs.onUpdated.addListener(cookieUpdate);
   // update quand la page est activée
 chrome.tabs.onActivated.addListener(cookieUpdate);
 chrome.tabs.onCreated.addListener(cookieUpdate);
+
+
   // Écoutez les événements de création et de mise à jour des onglets
 chrome.tabs.onCreated.addListener(function (tab) {
     handleToggleState(tab.id);
@@ -48,4 +50,9 @@ function handleToggleState(tabId) {
         // Envoyer un message au nouvel onglet avec l'état du toggle
         chrome.tabs.sendMessage(tabId, { toggleState: savedToggleState });
     });
+    // toggle2 cursor
+    chrome.storage.local.get(['toggle2State'], function (result) {
+      var savedToggle2State = result.toggle2State;
+      chrome.tabs.sendMessage(tabId, { toggle2State: savedToggle2State });
+  });
 }

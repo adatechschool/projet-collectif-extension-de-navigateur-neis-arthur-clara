@@ -22,8 +22,4 @@ document.addEventListener('DOMContentLoaded', function () {
           }
       });
   });
-  });
-
-document.addEventListener("animationstart", () => {
-    document.body.style.cursor = 'url(' + chrome.runtime.getURL('popup/cursor_blue.png') + '), auto'
 });
