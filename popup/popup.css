@@ -5,6 +5,10 @@
   text-align: center;
 }
 
+body{
+  background-color: black;
+}
+
 #zoom_container{
   padding: 4%;
   display: flex;
@@ -21,10 +25,18 @@
 
 }
 
-#bold_container{
+#bold_container, #cursor_container{
   display: flex;
   padding: 4%;
 }
+
+#zoom_container, #color_container, #textToSpeech, #bold_container, #cursor_container{
+  border: 2px solid #2196F3;
+  border-radius: 5px;
+  background-color:aliceblue;
+}
+
+
 /*Toggle pour mettre en gras*/
 .switch {
   position: relative;
