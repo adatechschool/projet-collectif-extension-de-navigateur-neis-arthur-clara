@@ -6,7 +6,6 @@ function getActiveTab() {
 
 
 function cookieUpdate() {
-    console.log("tot");
     getActiveTab().then((tabs) => {
     //cherche s'il y a des anciens cookies pour l'active tab//   
       let gettingCookies = chrome.cookies.get({
@@ -36,7 +35,6 @@ chrome.tabs.onCreated.addListener(function (tab) {
 });
 
 chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
-    console.log("tut");
     if (changeInfo.status === 'complete') {
         handleToggleState(tabId);
     }
