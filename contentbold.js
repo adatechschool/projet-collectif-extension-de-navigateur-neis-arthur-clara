@@ -14,11 +14,6 @@ chrome.runtime.onMessage.addListener(
     }
 );
 
-
-
-
-
-
 //bionic reading
 function formatWordsInTabs() {
     const allParagraphs = document.querySelectorAll("p, li, strong, em, a"); //récupération de tous les paragraphes du HTML + li
@@ -33,7 +28,6 @@ function formatWordsInTabs() {
         });
     });
 }
-
 
 //remove l'état initial
 function removeWordFormatting() {
