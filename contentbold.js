@@ -16,7 +16,7 @@ chrome.runtime.onMessage.addListener(
 
 //bionic reading
 function formatWordsInTabs() {
-    const allParagraphs = document.querySelectorAll("p, li, strong, em, a"); //récupération de tous les paragraphes du HTML + li
+    const allParagraphs = document.querySelectorAll("p, li, strong, em, ap, a, h1, h2, h3, ul, label, span, cite, b, i"); //récupération de tous les paragraphes du HTML + li
     allParagraphs.forEach(paragraph => { //pour chaque paragraphe 
         const textNodes = Array.from(paragraph.childNodes).filter(node => node.nodeType === Node.TEXT_NODE); //récupération de tout le text Node = texte sans lien HTTP
         textNodes.forEach(node => { //pour tout les textes nodes 
@@ -31,7 +31,7 @@ function formatWordsInTabs() {
 
 //remove l'état initial
 function removeWordFormatting() {
-    const allSpans = document.querySelectorAll("p > span, li > span, strong > span, em > span, a > span"); //sélection de tous les enfants de p (et autres) qui sont des span crée dans le formatWordsInTabs
+    const allSpans = document.querySelectorAll("p, li, strong, em, ap, a, h1, h2, h3, ul, label, span, cite, b, i"); //sélection de tous les enfants de p (et autres) qui sont des span crée dans le formatWordsInTabs
     allSpans.forEach(span => { //pour chaque span sélectionné 
     const paragraph = span.parentNode; //récupération du parent de Node de span
     paragraph.replaceChild(document.createTextNode(span.textContent), span); //Remplacement du span par le parent initial
