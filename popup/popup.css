@@ -14,7 +14,7 @@ body{
 
 button {
   border-radius: 5px;
-  border: 1.5px solid #0d0d0e;
+  border: 2px solid #0d0d0e;
   padding: 2% 4%;
   cursor: pointer;
   font-size: medium;
@@ -22,6 +22,7 @@ button {
   color: white;
   /*background: linear-gradient(#CAF0F8, #90E0EF, #00B4D8);*/
   background-color: #2196F3;
+  box-shadow: 5px 5px 10px gray;
 }
 
 #zoom_container{
@@ -48,7 +49,7 @@ button {
 }
 
 #zoom_container, #color_container, #textToSpeech, #bold_container, #cursor_container{
-  border: 2px solid #2196F3;
+  border: 3px solid #2196F3;
   border-radius: 5px;
   background-color:aliceblue;
   padding: 4%;
