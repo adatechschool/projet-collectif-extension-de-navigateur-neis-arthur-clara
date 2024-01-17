@@ -13,13 +13,15 @@ body{
 }
 
 button {
-  border-radius: 2rem;
-  border: 2px solid #0d0d0e;
+  border-radius: 5px;
+  border: 1.5px solid #0d0d0e;
   padding: 2% 4%;
   cursor: pointer;
   font-size: medium;
   font-weight: 600;
-  background: linear-gradient(#CAF0F8, #90E0EF, #00B4D8);
+  color: white;
+  /*background: linear-gradient(#CAF0F8, #90E0EF, #00B4D8);*/
+  background-color: #2196F3;
 }
 
 #zoom_container{
